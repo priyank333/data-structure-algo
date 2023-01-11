@@ -7,17 +7,13 @@ package org.dsa.practice.array.algo;
  * if it is greater than maxSoFar.
  */
 public class KadaneAlgorithm {
-    public static int maxSubArraySum(int[] arr) {
-        int maxSoFar = Integer.MIN_VALUE;
-        int maxEndingHere = 0;
-        for (int val : arr) {
+    public static long maxSubArraySum(int[] arr) {
+        long maxSoFar = Long.MIN_VALUE;
+        long maxEndingHere = 0;
+        for (long val : arr) {
             maxEndingHere += val;
-            if (maxSoFar < maxEndingHere) {
-                maxSoFar = maxEndingHere;
-            }
-            if (maxEndingHere < 0) {
-                maxEndingHere = 0;
-            }
+            maxEndingHere = maxEndingHere < 0 ? 0 : maxEndingHere;
+            maxSoFar = maxSoFar < maxEndingHere ? maxEndingHere : maxSoFar;
         }
         return maxSoFar;
     }
