@@ -1,5 +1,13 @@
 package org.dsa.practice.array;
 
+/**
+ * For a given array of size N contains all distinct value. Find total number of inversions.
+ * Following conditions are met to make inversion.
+ * 1. ARR[i] > ARR[j]
+ * 2. i < j
+ * <p>
+ * Solution: Apply to merge sort technique. While merging count total number of inversions.
+ */
 public class InversionCount {
     public static long merge(long[] arr, int left, int mid, int right) {
         long inversionCount = 0;
